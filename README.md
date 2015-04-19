@@ -3,7 +3,7 @@ A code representation of a ball clock.
 
 Navigate to the BallClock directory
 
-BallClock$ ruby StartBallClock.rb 
+$ ruby StartBallClock.rb 
 
 Ball Clock has two modes:
 
