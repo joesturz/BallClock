@@ -16,8 +16,8 @@ while(true)
     println("Enter 'exit' to exit the program:")
     
     //clean the input data of white space
-    var keyboard = NSFileHandle.fileHandleWithStandardInput()
-    var inputData = keyboard.availableData
+    let keyboard = NSFileHandle.fileHandleWithStandardInput()
+    let inputData = keyboard.availableData
     let input = NSString(data: inputData, encoding: NSUTF8StringEncoding)!.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet())
 
     if input == "exit"
@@ -26,7 +26,7 @@ while(true)
     }
     else
     {
-        var args = split(input){$0 == " "}
+        let args = split(input){$0 == " "}
         if args.count < 1 || args.count > 2
         {
             println("You must enter no less than 1 argument and no more than 2 arguments!")
@@ -36,7 +36,39 @@ while(true)
             var isValid = true;
             for arg in args
             {
-                println(arg)
+                let tempArg = arg.toInt()
+                if tempArg == nil || tempArg < 1
+                {
+                    println(arg + " is not a valid input")
+                    isValid = false
+                }
+            }
+            if isValid
+            {
+                let ballCount = args[0].toInt()
+                if ballCount < 27 || ballCount > 127
+                {
+                    println(args[0] + " is not between 27 and 127")
+                }
+                else
+                {
+                    if args.count == 1
+                    {
+                        //BallClock.run()
+                    }
+                    else
+                    {
+                        let minCount = args[1].toInt()
+                        if minCount < 0
+                        {
+                            println("The minuute count must be greater than 0")
+                        }
+                        else
+                        {
+                            //Run BallClockMinutes
+                        }
+                    }
+                }
             }
         }
     }
