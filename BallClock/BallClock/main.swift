@@ -54,7 +54,8 @@ while(true)
                 {
                     if args.count == 1
                     {
-                        //BallClock.run()
+                        let ballClock = BallClock(ballCount: ballCount!)
+                        ballClock.runClock();
                     }
                     else
                     {
