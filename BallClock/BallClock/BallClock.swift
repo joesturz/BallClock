@@ -60,8 +60,7 @@ class BallClock
         {
             return false
         }
-        let loopRun = ballCount - 1
-        for ballNum in 0...loopRun
+        for ballNum in 0..<ballCount
         {
             if(mainQueue[ballNum] != initQueue[ballNum])
             {
