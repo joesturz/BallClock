@@ -62,7 +62,7 @@ while(true)
                         let minCount = args[1].toInt()!
                         if minCount < 0
                         {
-                            println("The minuute count must be greater than 0")
+                            println("The minute count must be greater than 0")
                         }
                         else
                         {
@@ -74,11 +74,5 @@ while(true)
             }
         }
     }
-    
-
-    
-    
-    
-    
 }
 
