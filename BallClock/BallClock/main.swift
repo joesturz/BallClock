@@ -45,7 +45,7 @@ while(true)
             }
             if isValid
             {
-                let ballCount = args[0].toInt()
+                let ballCount = args[0].toInt()!
                 if ballCount < 27 || ballCount > 127
                 {
                     println(args[0] + " is not between 27 and 127")
@@ -54,19 +54,20 @@ while(true)
                 {
                     if args.count == 1
                     {
-                        let ballClock = BallClock(ballCount: ballCount!)
+                        let ballClock = BallClock(ballCount: ballCount)
                         ballClock.runClock();
                     }
                     else
                     {
-                        let minCount = args[1].toInt()
+                        let minCount = args[1].toInt()!
                         if minCount < 0
                         {
                             println("The minuute count must be greater than 0")
                         }
                         else
                         {
-                            //Run BallClockMinutes
+                            let ballClock = BallClockMins(ballCount: ballCount, minuteCount: minCount)
+                            ballClock.runClock()
                         }
                     }
                 }

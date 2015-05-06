@@ -28,12 +28,22 @@ class BallClock
         self.ballCount = ballCount
         halfDayCount = 0
         
-        mainQueue = createBallArray(ballCount: ballCount)
-        initQueue = createBallArray(ballCount: ballCount)
+        mainQueue = BallClock.createBallArray(ballCount: ballCount)
+        initQueue = BallClock.createBallArray(ballCount: ballCount)
         
         mins = [Int]()
         fiveMins = [Int]()
         hours = [Int]()
+    }
+    
+    class func createBallArray(#ballCount:Int)->Array<Int>
+    {
+        var queue: Array<Int> = [Int]()
+        for num in 1...ballCount
+        {
+            queue.append(num)
+        }
+        return queue
     }
     
     func runClock()
@@ -127,12 +137,3 @@ class BallClock
     
 }
 
-func createBallArray(#ballCount:Int)->Array<Int>
-{
-    var queue: Array<Int> = [Int]()
-    for num in 1...ballCount
-    {
-        queue.append(num)
-    }
-    return queue
-}

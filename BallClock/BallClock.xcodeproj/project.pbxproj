@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		D89478701AF8696F00E44DA8 /* BallClock.swift in Sources */ = {isa = PBXBuildFile; fileRef = D894786F1AF8696F00E44DA8 /* BallClock.swift */; };
+		D8A9ADFA1AF9B93400CAF7E2 /* BallClockMins.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8A9ADF91AF9B93400CAF7E2 /* BallClockMins.swift */; };
 		D8B1215A1AF1D98A009B3373 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8B121591AF1D98A009B3373 /* main.swift */; };
 /* End PBXBuildFile section */
 
@@ -25,6 +26,7 @@
 
 /* Begin PBXFileReference section */
 		D894786F1AF8696F00E44DA8 /* BallClock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BallClock.swift; sourceTree = "<group>"; };
+		D8A9ADF91AF9B93400CAF7E2 /* BallClockMins.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BallClockMins.swift; sourceTree = "<group>"; };
 		D8B121561AF1D98A009B3373 /* BallClock */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = BallClock; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8B121591AF1D98A009B3373 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -61,6 +63,7 @@
 			children = (
 				D8B121591AF1D98A009B3373 /* main.swift */,
 				D894786F1AF8696F00E44DA8 /* BallClock.swift */,
+				D8A9ADF91AF9B93400CAF7E2 /* BallClockMins.swift */,
 			);
 			path = BallClock;
 			sourceTree = "<group>";
@@ -122,6 +125,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D8B1215A1AF1D98A009B3373 /* main.swift in Sources */,
+				D8A9ADFA1AF9B93400CAF7E2 /* BallClockMins.swift in Sources */,
 				D89478701AF8696F00E44DA8 /* BallClock.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
