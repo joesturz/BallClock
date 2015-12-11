@@ -13,9 +13,9 @@ class BallClock(ballCount: Int) {
 
 
   //arrays representing the tracks
-  var mins: Array[Int]
-  var fiveMins: Array[Int]
-  var hours: Array[Int]
+  var mins = List[Int]()
+  var fiveMins = List[Int]()
+  var hours = List[Int]()
 
   def createBallArray(count: Int) = {
     var queue = List[Int]()
@@ -28,7 +28,7 @@ class BallClock(ballCount: Int) {
     do {
       addMinute(mainQueue(0))
       mainQueue.drop(0)
-    }while(!checkIfBackAtStart)
+    }while(true != checkIfBackAtStart)
     println(ballCount + " balls cycle after " + halfDayCount/2 + " days.")
   }
 
@@ -36,7 +36,10 @@ class BallClock(ballCount: Int) {
 
   }
   def checkIfBackAtStart {
-
+    val bool = true
+    if (bool) {
+      bool
+    }
   }
 
 
