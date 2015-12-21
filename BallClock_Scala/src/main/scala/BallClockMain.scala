@@ -37,11 +37,17 @@ object BallClockMain {
               else {
                 // create and run an actual BallClock
                 if (args.size == 1) {
-
+                  val ballClock = new BallClock(ballCount)
+                  ballClock.runClock
                 }
                 else {
                   val minCount = toInt(args(1))
-                  if (minCount < 0) {
+                  if (minCount < 1) {
+                    println("The minute count must be greater than 0")
+                  }
+                  else {
+                    val ballClock = new BallClockMins(ballCount, minCount)
+                    ballClock.runClock()
                   }
                 }
               }
