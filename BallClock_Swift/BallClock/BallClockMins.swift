@@ -23,16 +23,16 @@ class BallClockMins: BallClock
         {
             addMinute(mainQueue.removeAtIndex(0))
         }
-        var jsonObjectHash = getJSON()
-        println(jsonObjectHash)
+        let jsonObjectHash = getJSON()
+        print(jsonObjectHash)
     }
     func getJSON()->String
     {
         
-        var min: String = "\"Min\":\(mins),"
-        var five: String = "\"FiveMin\":\(fiveMins),"
-        var hr: String = "\"Hour\":\(hours),"
-        var main: String = "\"Main\":\(mainQueue)"
+        let min: String = "\"Min\":\(mins),"
+        let five: String = "\"FiveMin\":\(fiveMins),"
+        let hr: String = "\"Hour\":\(hours),"
+        let main: String = "\"Main\":\(mainQueue)"
         
         return "{" + min + five + hr + main + "}"
     }

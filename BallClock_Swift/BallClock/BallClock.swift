@@ -36,7 +36,7 @@ class BallClock
         hours = [Int]()
     }
     
-    class func createBallArray(#ballCount:Int)->Array<Int>
+    class func createBallArray(ballCount ballCount:Int)->Array<Int>
     {
         var queue: Array<Int> = [Int]()
         for num in 1...ballCount
@@ -48,11 +48,11 @@ class BallClock
     
     func runClock()
     {
-        do
+        repeat
         {
             addMinute(mainQueue.removeAtIndex(0))
         }while !checkIfBackToStart()
-        println("\(ballCount) balls cycle after \(Double(halfDayCount)/2) days.")
+        print("\(ballCount) balls cycle after \(Double(halfDayCount)/2) days.")
     }
     func checkIfBackToStart()->Bool
     {
