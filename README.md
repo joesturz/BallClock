@@ -1,6 +1,8 @@
 # BallClock
 A code representation of a ball clock.
 
+https://en.wikipedia.org/wiki/Rolling_ball_clock
+
 Navigate to the BallClock directory
 
 $ ruby StartBallClock.rb 
