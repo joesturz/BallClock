@@ -12,7 +12,15 @@ class BallClockMins(ballCount: Int, minuteCount: Int) extends BallClock(ballCoun
     println(getJSON)
   }
   def getJSON(): String = {
-    val s: String = "This is where the JSON object would be printed!"
+    val m = getString(mins)
+    val f = getString(fiveMins)
+    val h = getString(hours)
+    val mq = getString(mainQueue)
+    val s: String = "{" + "\"Min\": "+ m +"," + "\"FiveMin\": "+ f +"," +"\"Hour\": "+ h +"," +"\"Main\": " + mq + "}"
+    s
+  }
+  def getString(a: List[Int]): String ={
+    val s = a.mkString("[",",","]")
     s
   }
 

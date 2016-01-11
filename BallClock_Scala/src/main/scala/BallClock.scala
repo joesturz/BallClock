@@ -30,7 +30,7 @@ class BallClock(ballCount: Int) {
   def runClock{
     do {
       addMinute(mainQueue(0))
-      mainQueue = mainQueue.drop(0)
+      mainQueue = mainQueue.drop(1)
     }while(true != checkIfBackAtStart)
     println(ballCount + " balls cycle after " + halfDayCount/2 + " days.")
   }
@@ -87,10 +87,15 @@ class BallClock(ballCount: Int) {
     }
   }
 
-  def checkIfBackAtStart {
-    val bool = true
-    if (bool) {
-      bool
+  def checkIfBackAtStart: Boolean = {
+    if(mainQueue.size != initQueue.size) {
+      return false
     }
+    for(ballNum <- 0 until (ballCount-1)){
+      if(mainQueue(ballNum) != initQueue(ballNum)){
+        return false
+      }
+    }
+    return true
   }
 }
