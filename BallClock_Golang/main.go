@@ -7,15 +7,6 @@ import "strings"
 
 func main() {
 
-  argsCount := len(os.Args)
-  argsArray := os.Args[1:]
-
-  zero := argsArray[0]
-  one := argsArray[1]
-
-  fmt.Println("arg 0: ", zero)
-  fmt.Println("arg 1: ", one)
-
   reader := bufio.NewReader(os.Stdin)
 
   for
@@ -26,18 +17,21 @@ func main() {
     fmt.Println("Enter 'exit' to exit the program:")
 
     text, _ := reader.ReadString('\n')
-    input := strings.TrimSpace(text)
-
-    if input == "exit" {
+    input := strings.Split(strings.TrimSpace(text), " ")
+    argsCount := len(input)
+    noArgs := false
+    fmt.Println("Args Array size: ", argsCount)
+    if(argsCount == 1 && input[0] == ""){
+      noArgs = true
+    }
+    if input[0] == "exit" {
       break
     } else {
-      if argsCount < 1 || argsCount > 2 {
-        fmt.Println("You must enter no less than one argument and no more than 2 arguments!")
-        break
+      if noArgs || argsCount > 2 {
+        fmt.Println("You must enter no less than 1 argument and no more than 2 arguments!")
       } else {
-        fmt.Println("you entered: ",zero, one)
+        fmt.Println("you entered: ", input)
       }
     }
-    fmt.Println("Your input was: ", input)
   }
 }
