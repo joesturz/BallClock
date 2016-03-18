@@ -36,14 +36,35 @@ func main() {
         fmt.Println("You must enter no less than 1 argument and no more than 2 arguments!")
       } else {
         fmt.Println("you entered: ", input)
-        //isValid := true
-        for _,element := range input {
-          if _, err := strconv.Atoi(element); err != nil {
-            fmt.Printf("%v is a not a valid input\n", element)
-            //isValid = false
+        isValid := true
+
+        if _, err := strconv.Atoi(input[0]); err != nil {
+          fmt.Printf("%v is a not a valid input\n", input[0])
+          isValid = false
+        }
+        if argsCount == 2 {
+          if _, err := strconv.Atoi(input[1]); err != nil {
+            fmt.Printf("%v is a not a valid input\n", input[1])
+            isValid = false
           }
         }
-        //if isValid{}
+        if isValid{
+          ballCount,_ := strconv.Atoi(input[0])
+          if ballCount < 27 || ballCount > 127 {
+            fmt.Printf("%v is not between 27 and 127\n", ballCount)
+          } else {
+            if argsCount == 1 {
+             fmt.Println("Run the ballclock until it resets code!")
+            } else {
+              minCount,_ := strconv.Atoi(input[1])
+              if minCount < 0 {
+                fmt.Println("The minute count must be greater than 0")
+              } else {
+                fmt.Println("Run the ballclock for the time specified!")
+              }
+            }
+          }
+        }
       }
     }
   }
