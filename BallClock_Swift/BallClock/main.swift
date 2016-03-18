@@ -14,7 +14,7 @@ while(true)
     print("\t1. Enter the number of balls to use in the Clock (must be 27 to 127). Will tell you how many days it takes for clock's balls to return to its starting configuration.")
     print("\t2. Enter the number of balls (must be 27 to 127) and the number of minutes (must be greater than 0) you want the clock to run. The configuration of the balls after the give number of minutes will be printed as a JSON object.")
     print("Enter 'exit' to exit the program:")
-    
+
     //clean the input data of white space
     let keyboard = NSFileHandle.fileHandleWithStandardInput()
     let inputData = keyboard.availableData
@@ -75,4 +75,3 @@ while(true)
         }
     }
 }
-

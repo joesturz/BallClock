@@ -1,9 +1,14 @@
 package main
 
-import "os"
-import "fmt"
-import "bufio"
-import "strings"
+import (
+  "os"
+  "fmt"
+  "bufio"
+  "strings"
+  "strconv"
+ )
+
+
 
 func main() {
 
@@ -20,7 +25,7 @@ func main() {
     input := strings.Split(strings.TrimSpace(text), " ")
     argsCount := len(input)
     noArgs := false
-    fmt.Println("Args Array size: ", argsCount)
+    //fmt.Println("Args Array size: ", argsCount)
     if(argsCount == 1 && input[0] == ""){
       noArgs = true
     }
@@ -31,6 +36,14 @@ func main() {
         fmt.Println("You must enter no less than 1 argument and no more than 2 arguments!")
       } else {
         fmt.Println("you entered: ", input)
+        //isValid := true
+        for _,element := range input {
+          if _, err := strconv.Atoi(element); err != nil {
+            fmt.Printf("%v is a not a valid input\n", element)
+            //isValid = false
+          }
+        }
+        //if isValid{}
       }
     }
   }
