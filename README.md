@@ -1,11 +1,7 @@
 # BallClock
-A code representation of a ball clock.
+A code representation of a ball clock in various languages.
 
 https://en.wikipedia.org/wiki/Rolling_ball_clock
-
-Navigate to the BallClock directory
-
-$ ruby StartBallClock.rb 
 
 Ball Clock has two modes:
 
