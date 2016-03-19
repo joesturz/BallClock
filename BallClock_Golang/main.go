@@ -9,6 +9,12 @@ import (
  )
 
 
+ func runBallClock(ballCount int) {
+   fmt.Printf("Run the ballclock with %v balls until it resets!\n", ballCount)
+ }
+ func runBallClockTime(ballCount int, mins int) {
+   fmt.Printf("Run the ballclock with %v balls for %v minutes!\n",ballCount, mins)
+ }
 
 func main() {
 
@@ -48,19 +54,19 @@ func main() {
             isValid = false
           }
         }
-        if isValid{
+        if isValid {
           ballCount,_ := strconv.Atoi(input[0])
           if ballCount < 27 || ballCount > 127 {
             fmt.Printf("%v is not between 27 and 127\n", ballCount)
           } else {
             if argsCount == 1 {
-             fmt.Println("Run the ballclock until it resets code!")
+             runBallClock(ballCount)
             } else {
               minCount,_ := strconv.Atoi(input[1])
               if minCount < 0 {
                 fmt.Println("The minute count must be greater than 0")
               } else {
-                fmt.Println("Run the ballclock for the time specified!")
+                runBallClockTime(ballCount, minCount)
               }
             }
           }
