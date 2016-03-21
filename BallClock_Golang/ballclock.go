@@ -28,12 +28,20 @@ func createSlice(sliceSize int) []int {
   return slice
 }
 
-func runClock() {
-
+func (clock *ballclock) runClock() {
+  fmt.Printf("%v balls cycle after %v days.",clock.ballCount, clock.halfDayCount*2)
 }
 
-func checkIfBackToStart() bool {
-
+func (clock *ballclock) checkIfBackToStart() bool {
+  if len(clock.mainQueue) != len(clock.initQueue) {
+    return false
+  }
+  for ballnum := 0; ballnum <= clock.ballCount; ballnum++ {
+    if clock.mainQueue[ballnum] != clock.initQueue[ballnum] {
+      return false
+    }
+  }
+  return true
 }
 
 func addMinute(ball int) {
