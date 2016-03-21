@@ -12,30 +12,30 @@ class BallClock
 {
     var ballCount: Int
     var halfDayCount: Int
-    
+
     //main ball array
     var mainQueue: Array<Int>
-    
+
     var initQueue: Array<Int>
-    
+
     //arrays representing the tracks
     var mins: Array<Int>
     var fiveMins: Array<Int>
     var hours: Array<Int>
-    
+
     init(ballCount: Int)
     {
         self.ballCount = ballCount
         halfDayCount = 0
-        
+
         mainQueue = BallClock.createBallArray(ballCount: ballCount)
         initQueue = BallClock.createBallArray(ballCount: ballCount)
-        
+
         mins = [Int]()
         fiveMins = [Int]()
         hours = [Int]()
     }
-    
+
     class func createBallArray(ballCount ballCount:Int)->Array<Int>
     {
         var queue: Array<Int> = [Int]()
@@ -45,7 +45,7 @@ class BallClock
         }
         return queue
     }
-    
+
     func runClock()
     {
         repeat
@@ -69,7 +69,7 @@ class BallClock
         }
         return true
     }
-    
+
     func addMinute(ball: Int)
     {
         if mins.count < 4
@@ -82,7 +82,7 @@ class BallClock
             addFiveMinute(ball)
         }
     }
-    
+
     func addFiveMinute(ball: Int)
     {
         if fiveMins.count < 11
@@ -95,7 +95,7 @@ class BallClock
             addHour(ball)
         }
     }
-    
+
     func addHour(ball: Int)
     {
         if hours.count < 11
@@ -111,13 +111,12 @@ class BallClock
     }
     func emptyMins()
     {
-        
         while mins.count > 0
         {
             mainQueue.append(mins.removeLast())
         }
     }
-    
+
     func emptyFiveMins()
     {
         while fiveMins.count > 0
@@ -125,7 +124,7 @@ class BallClock
             mainQueue.append(fiveMins.removeLast())
         }
     }
-    
+
     func emptyHours()
     {
         while hours.count > 0
@@ -133,6 +132,5 @@ class BallClock
             mainQueue.append(hours.removeLast())
         }
     }
-    
-}
 
+}
