@@ -11,6 +11,10 @@ import (
 
  func runBallClock(ballCount int) {
    fmt.Printf("Run the ballclock with %v balls until it resets!\n", ballCount)
+   bc := new(BallClock)
+   bc.init(ballCount)
+   bc.runClock()
+
  }
  func runBallClockTime(ballCount int, mins int) {
    fmt.Printf("Run the ballclock with %v balls for %v minutes!\n",ballCount, mins)
