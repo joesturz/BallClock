@@ -1,11 +1,13 @@
 # BallClock - Golang
 
 To build:
+
 ```bash
 $ go build
 ```
 
-to run:
+To run:
+
 ```bash
 $ ./BallClock_Golang
 ```
