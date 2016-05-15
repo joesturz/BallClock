@@ -31,17 +31,27 @@ func createSlice(sliceSize int) []int {
   }
   return slice
 }
+//used for debugging
+func (clock *BallClock)prtev(counter int) {
+  fmt.Println("counter: ", counter)
+  fmt.Println("mins: ",clock.mins)
+  fmt.Println("five: ",clock.fiveMins)
+  fmt.Println("hours: ",clock.hours)
+  fmt.Println("main: ",clock.mainQueue)
+  fmt.Println("init: ",clock.initQueue)
+}
 
 func (clock *BallClock) runClock() {
+  counter := 0
   clock.addMinute(clock.mainQueue[0])
   clock.mainQueue = clock.mainQueue[1:]
+  counter = counter + 1
   for !clock.checkIfBackToStart() {
     clock.addMinute(clock.mainQueue[0])
     clock.mainQueue = clock.mainQueue[1:]
-    //fmt.Println("init: ",clock.initQueue)
-    //fmt.Println("main: ",clock.mainQueue)
+    counter = counter + 1
   }
-  fmt.Printf("%v balls cycle after %v days.\n",clock.ballCount, clock.halfDayCount*2)
+  fmt.Printf("%v balls cycle after %v days.\n",clock.ballCount, clock.halfDayCount/2)
 }
 
 func (clock *BallClock) checkIfBackToStart() bool {
@@ -60,7 +70,7 @@ func (clock *BallClock) checkIfBackToStart() bool {
 }
 
 func (clock *BallClock) addMinute(ball int) {
-  fmt.Println("addMin", ball)
+  //fmt.Println("addMin", ball)
   if len(clock.mins) < 4 {
     clock.mins = append(clock.mins, ball)
   } else {
@@ -85,7 +95,7 @@ func (clock *BallClock) addHour(ball int) {
     clock.hours = append(clock.hours, ball)
   } else {
     clock.emptyHours()
-    clock.addHour(ball)
+    clock.mainQueue = append(clock.mainQueue, ball)
     clock.halfDayCount++
   }
 }
@@ -93,20 +103,20 @@ func (clock *BallClock) addHour(ball int) {
 func (clock *BallClock) emptyMins() {
   for(len(clock.mins) > 0){
     clock.mainQueue = append(clock.mainQueue, clock.mins[len(clock.mins) - 1])
-    clock.mins = clock.mins[:len(clock.mins)]
+    clock.mins = clock.mins[:len(clock.mins) - 1]
   }
 }
 
 func (clock *BallClock) emptyFiveMins() {
   for(len(clock.fiveMins) > 0){
     clock.mainQueue = append(clock.mainQueue, clock.fiveMins[len(clock.fiveMins) - 1])
-    clock.fiveMins = clock.fiveMins[:len(clock.fiveMins)]
+    clock.fiveMins = clock.fiveMins[:len(clock.fiveMins) - 1]
   }
 }
 
 func (clock *BallClock) emptyHours() {
   for(len(clock.hours) > 0){
     clock.mainQueue = append(clock.mainQueue, clock.hours[len(clock.hours) - 1])
-    clock.hours = clock.hours[:len(clock.hours)]
+    clock.hours = clock.hours[:len(clock.hours) - 1]
   }
 }
