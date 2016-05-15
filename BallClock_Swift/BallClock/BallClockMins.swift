@@ -35,5 +35,6 @@ class BallClockMins: BallClock
         let main: String = "\"Main\":\(mainQueue)"
         
         return "{" + min + five + hr + main + "}"
+        
     }
 }
