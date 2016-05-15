@@ -10,14 +10,15 @@ import (
 
 
  func runBallClock(ballCount int) {
-   fmt.Printf("Run the ballclock with %v balls until it resets!\n", ballCount)
    bc := new(BallClock)
    bc.init(ballCount)
    bc.runClock()
 
  }
  func runBallClockTime(ballCount int, mins int) {
-   fmt.Printf("Run the ballclock with %v balls for %v minutes!\n",ballCount, mins)
+   bc := new(BallClock)
+   bc.init(ballCount)
+   bc.runClockWithMins(mins)
  }
 
 func main() {
@@ -45,7 +46,6 @@ func main() {
       if noArgs || argsCount > 2 {
         fmt.Println("You must enter no less than 1 argument and no more than 2 arguments!")
       } else {
-        fmt.Println("you entered: ", input)
         isValid := true
 
         if _, err := strconv.Atoi(input[0]); err != nil {

@@ -32,13 +32,16 @@ func createSlice(sliceSize int) []int {
   return slice
 }
 //used for debugging
-func (clock *BallClock)prtev(counter int) {
+func (clock *BallClock) prtev(counter int) {
   fmt.Println("counter: ", counter)
   fmt.Println("mins: ",clock.mins)
   fmt.Println("five: ",clock.fiveMins)
   fmt.Println("hours: ",clock.hours)
   fmt.Println("main: ",clock.mainQueue)
   fmt.Println("init: ",clock.initQueue)
+}
+func (clock *BallClock) printJSON() {
+  fmt.Println("{\"Min:\" ", clock.mins, "\"FiveMin:\" ", clock.fiveMins, "\"Hour:\" ", clock.hours, "\"Main:\" ", clock.mainQueue, "}")
 }
 
 func (clock *BallClock) runClock() {
@@ -49,9 +52,17 @@ func (clock *BallClock) runClock() {
   for !clock.checkIfBackToStart() {
     clock.addMinute(clock.mainQueue[0])
     clock.mainQueue = clock.mainQueue[1:]
-    counter = counter + 1
+    counter++
   }
   fmt.Printf("%v balls cycle after %v days.\n",clock.ballCount, clock.halfDayCount/2)
+}
+
+func (clock *BallClock) runClockWithMins(mins_count int) {
+  for i := 1; i <= mins_count; i++{
+    clock.addMinute(clock.mainQueue[0])
+    clock.mainQueue = clock.mainQueue[1:]
+  }
+  clock.printJSON()
 }
 
 func (clock *BallClock) checkIfBackToStart() bool {
