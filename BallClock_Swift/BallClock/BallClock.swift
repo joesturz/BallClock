@@ -106,7 +106,7 @@ class BallClock
         {
             emptyHours()
             mainQueue.append(ball)
-            halfDayCount++;
+            halfDayCount+=1;
         }
     }
     func emptyMins()

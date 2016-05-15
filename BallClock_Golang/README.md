@@ -2,10 +2,10 @@
 
 To build:
 ```bash
-go build
+$ go build
 ```
 
 to run:
 ```bash
-./BallClock_Golang
+$ ./BallClock_Golang
 ```
