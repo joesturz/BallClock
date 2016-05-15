@@ -19,7 +19,7 @@ class BallClockMins: BallClock
     
     override func runClock()
     {
-        for i in (1...minuteCount)
+        for _ in (1...minuteCount)
         {
             addMinute(mainQueue.removeAtIndex(0))
         }
