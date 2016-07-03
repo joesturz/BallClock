@@ -21,7 +21,7 @@ class BallClockMins: BallClock
     {
         for _ in (1...minuteCount)
         {
-            addMinute(mainQueue.removeAtIndex(0))
+            addMinute(mainQueue.remove(at: 0))
         }
         let jsonObjectHash = getJSON()
         print(jsonObjectHash)

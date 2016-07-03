@@ -16,9 +16,9 @@ while(true)
     print("Enter 'exit' to exit the program:")
 
     //clean the input data of white space
-    let keyboard = NSFileHandle.fileHandleWithStandardInput()
+    let keyboard = FileHandle.standardInput()
     let inputData = keyboard.availableData
-    let input = NSString(data: inputData, encoding: NSUTF8StringEncoding)!.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet())
+    let input = NSString(data: inputData, encoding: String.Encoding.utf8.rawValue)!.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
 
     if input == "exit"
     {
