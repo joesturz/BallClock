@@ -16,7 +16,7 @@ while(true)
     print("Enter 'exit' to exit the program:")
 
     //clean the input data of white space
-    let keyboard = FileHandle.standardInput()
+    let keyboard = FileHandle.standardInput
     let inputData = keyboard.availableData
     let input = NSString(data: inputData, encoding: String.Encoding.utf8.rawValue)!.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
 
@@ -37,7 +37,7 @@ while(true)
             for arg in args
             {
                 let tempArg = Int(arg)
-                if tempArg == nil || tempArg < 1
+                if tempArg == nil || tempArg! < 1
                 {
                     print(arg + " is not a valid input")
                     isValid = false
